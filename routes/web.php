@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get("/", [AdminController::class, "login"]);
+    Route::get("/forgot-password", [AdminController::class, "forgot_password"]);
 });
