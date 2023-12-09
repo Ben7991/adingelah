@@ -24,3 +24,7 @@ h6 {
     color: var(--bs-dark);
     font-weight: var(--font-bold);
 }
+
+.text-main {
+    color: var(--color-emerald-green);
+}
