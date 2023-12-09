@@ -1,5 +1,6 @@
 :root {
     --color-emerald-green: rgb(27, 153, 139);
+    --color-emerald-green-hover: rgb(17, 104, 94);
     --color-gold: rgb(212, 176, 56);
 
     --font-light: 300;
@@ -23,4 +24,45 @@ h5,
 h6 {
     color: var(--bs-dark);
     font-weight: var(--font-bold);
+}
+
+.text-main {
+    color: var(--color-emerald-green);
+}
+
+.bg-main,
+.btn-main,
+.btn-main:focus {
+    background-color: var(--color-emerald-green);
+}
+
+.btn-main,
+.btn-main:focus {
+    color: var(--bs-white) !important;
+}
+
+.btn-main:hover {
+    background-color: var(--color-emerald-green-hover);
+}
+
+.go-back {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.go-back__link {
+    padding: 7px 20px 5px;
+    border: 1px solid var(--bs-gray-100);
+    background-color: var(--bs-white);
+    color: var(--bs-secondary);
+}
+
+.go-back__link:hover {
+    background-color: var(--color-emerald-green);
+    color: var(--bs-white);
+}
+
+.image-holder {
+    border: 1px dashed var(--bs-gray-500);
 }
