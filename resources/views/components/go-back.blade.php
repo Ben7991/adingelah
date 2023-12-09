@@ -5,7 +5,7 @@
                 <a href="{{ $path }}" class="go-back__link shadow-sm rounded-pill">
                     <i class="bi bi-arrow-left"></i>
                 </a>
-                <p class="m-0">{{ $title }}</p>
+                <p class="m-0 fw-semibold">{{ $title }}</p>
             </div>
         </div>
     </div>

@@ -44,3 +44,21 @@ h6 {
 .btn-main:hover {
     background-color: var(--color-emerald-green-hover);
 }
+
+.go-back {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.go-back__link {
+    padding: 7px 20px 5px;
+    border: 1px solid var(--bs-gray-100);
+    background-color: var(--bs-white);
+    color: var(--bs-secondary);
+}
+
+.go-back__link:hover {
+    background-color: var(--color-emerald-green);
+    color: var(--bs-white);
+}
