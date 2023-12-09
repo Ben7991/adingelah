@@ -29,6 +29,7 @@ Route::prefix('admin')->group(function () {
     Route::get("forgot-password", [AdminController::class, "forgot_password"]);
 
     Route::get("dashboard", [AdminController::class, "dashboard"]);
+    Route::post("profile", [AdminController::class, "profile"]);
     Route::resource("donations", DonationsController::class)->only([
         "index", "show"
     ]);
