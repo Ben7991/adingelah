@@ -37,6 +37,6 @@ Route::prefix('admin')->group(function () {
         "index", "store", "update", "destroy", "create"
     ]);
     Route::resource("posts", PostsController::class)->only([
-        "index", "store", "update", "destroy", "create"
+        "index", "store", "update", "destroy", "create", "edit"
     ]);
 });
