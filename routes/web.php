@@ -24,5 +24,7 @@ Route::prefix('admin')->group(function () {
     Route::get("forgot-password", [AdminController::class, "forgot_password"]);
 
     Route::get("dashboard", [AdminController::class, "dashboard"]);
-
+    Route::resource("categories", CategoriesController::class)->only([
+        "index", "store", "create", "edit", "update", "destroy"
+    ]);
 });
