@@ -58,7 +58,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#" class="dropdown-item text-secondary">
+                            <a href="/admin/profile" class="dropdown-item text-secondary">
                                 <i class="bi bi-person"></i>&nbsp;Profile
                             </a>
                         </li>
