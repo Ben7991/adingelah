@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DonationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,9 @@ Route::prefix('admin')->group(function () {
     Route::get("forgot-password", [AdminController::class, "forgot_password"]);
 
     Route::get("dashboard", [AdminController::class, "dashboard"]);
+    Route::get("donations", DonationsController::class)->only([
+        "index", "show"
+    ]);
     Route::resource("categories", CategoriesController::class)->only([
         "index", "store", "create", "edit", "update", "destroy"
     ]);
