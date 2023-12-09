@@ -30,16 +30,16 @@
             <a href="/admin/categories" class="main__link {{ $title == "Categories" ? "main__link--active" : "" }}">
                 <i class="bi bi-bookmarks"></i>&nbsp;Categories
             </a>
-            <a href="/admin/blog" class="main__link {{ $title == "Blog Posts" ? "main__link--active" : "" }}">
+            <a href="/admin/blogs" class="main__link {{ $title == "Blog Posts" ? "main__link--active" : "" }}">
                 <i class="bi bi-substack"></i>&nbsp;Blog Posts
             </a>
-            <a href="/admin/event" class="main__link {{ $title == "Upcoming Events" ? "main__link--active" : "" }}">
+            <a href="/admin/events" class="main__link {{ $title == "Upcoming Events" ? "main__link--active" : "" }}">
                 <i class="bi bi-calendar-event"></i>&nbsp;Upcoming Events
             </a>
             <a href="/admin/program-initiative" class="main__link {{ $title == "Programs & Initiatives" ? "main__link--active" : "" }}">
                 <i class="bi bi-arrow-clockwise"></i>&nbsp;Programs & Initiatives
             </a>
-            <a href="/admin/program-initiative" class="main__link {{ $title == "Users" ? "main__link--active" : "" }}">
+            <a href="/admin/users" class="main__link {{ $title == "Users" ? "main__link--active" : "" }}">
                 <i class="bi bi-people"></i>&nbsp;Users
             </a>
         </aside>
