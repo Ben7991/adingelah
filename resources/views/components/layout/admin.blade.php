@@ -20,25 +20,25 @@
     <main class="main">
         <aside class="main__drawer">
 
-            <a href="/admin/dashboard" class="main__link">
+            <a href="/admin/dashboard" class="main__link {{ $title == "Dashboard" ? "main__link--active" : "" }}">
                 <i class="bi bi-graph-up"></i>&nbsp;Dashboard
             </a>
-            <a href="/admin/donations" class="main__link">
+            <a href="/admin/donations" class="main__link {{ $title == "Donations" ? "main__link--active" : "" }}">
                 <i class="bi bi-basket"></i>&nbsp;Donations
             </a>
-            <a href="/admin/categories" class="main__link">
+            <a href="/admin/categories" class="main__link {{ $title == "Categories" ? "main__link--active" : "" }}">
                 <i class="bi bi-bookmarks"></i>&nbsp;Categories
             </a>
-            <a href="/admin/blog" class="main__link">
+            <a href="/admin/blog" class="main__link {{ $title == "Blog Posts" ? "main__link--active" : "" }}">
                 <i class="bi bi-substack"></i>&nbsp;Blog Posts
             </a>
-            <a href="/admin/event" class="main__link">
+            <a href="/admin/event" class="main__link {{ $title == "Upcoming Events" ? "main__link--active" : "" }}">
                 <i class="bi bi-calendar-event"></i>&nbsp;Upcoming Events
             </a>
-            <a href="/admin/program-initiative" class="main__link">
+            <a href="/admin/program-initiative" class="main__link {{ $title == "Programs & Initiatives" ? "main__link--active" : "" }}">
                 <i class="bi bi-arrow-clockwise"></i>&nbsp;Programs & Initiatives
             </a>
-            <a href="/admin/program-initiative" class="main__link">
+            <a href="/admin/program-initiative" class="main__link {{ $title == "Users" ? "main__link--active" : "" }}">
                 <i class="bi bi-people"></i>&nbsp;Users
             </a>
         </aside>
