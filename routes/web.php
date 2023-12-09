@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DonationsController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UpcomingEventsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,5 +39,8 @@ Route::prefix('admin')->group(function () {
     ]);
     Route::resource("posts", PostsController::class)->only([
         "index", "store", "update", "destroy", "create", "edit"
+    ]);
+    Route::resource("events", UpcomingEventsController::class)->only([
+        "index", "create", "store", "edit", "update", "destroy"
     ]);
 });
