@@ -63,7 +63,7 @@
                         </li>
                         <li>
                             <button class="dropdown-item text-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <i class="bi bi-box-arrow-right"></i>&nbsp;Logout out
+                                <i class="bi bi-box-arrow-right"></i>&nbsp;Logout
                             </button>
                         </li>
                     </ul>
