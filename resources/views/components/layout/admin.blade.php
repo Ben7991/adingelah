@@ -30,7 +30,7 @@
             <a href="/admin/categories" class="main__link {{ $title == "Categories" ? "main__link--active" : "" }}">
                 <i class="bi bi-bookmarks"></i>&nbsp;Categories
             </a>
-            <a href="/admin/blogs" class="main__link {{ $title == "Blog Posts" ? "main__link--active" : "" }}">
+            <a href="/admin/posts" class="main__link {{ $title == "Blog Posts" ? "main__link--active" : "" }}">
                 <i class="bi bi-substack"></i>&nbsp;Blog Posts
             </a>
             <a href="/admin/events" class="main__link {{ $title == "Upcoming Events" ? "main__link--active" : "" }}">
