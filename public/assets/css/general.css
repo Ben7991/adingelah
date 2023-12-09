@@ -62,3 +62,7 @@ h6 {
     background-color: var(--color-emerald-green);
     color: var(--bs-white);
 }
+
+.image-holder {
+    border: 1px dashed var(--bs-gray-500);
+}
