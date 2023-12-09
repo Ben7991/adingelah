@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset("assets/css/general.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/admin.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/data-table/datatables.min.css")}}">
+    @stack("styles")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Open+Sans:wght@300;400;600;800&display=swap">
     <script src="{{ asset("assets/bootstrap/js/popper.min.js") }}"></script>
     <script src="{{ asset("assets/bootstrap/js/bootstrap.min.js") }}"></script>
@@ -30,7 +31,7 @@
             <a href="/admin/categories" class="main__link {{ $title == "Categories" ? "main__link--active" : "" }}">
                 <i class="bi bi-bookmarks"></i>&nbsp;Categories
             </a>
-            <a href="/admin/posts" class="main__link {{ $title == "Blog Posts" ? "main__link--active" : "" }}">
+            <a href="/admin/posts" class="main__link {{ $title == "Posts" ? "main__link--active" : "" }}">
                 <i class="bi bi-substack"></i>&nbsp;Blog Posts
             </a>
             <a href="/admin/events" class="main__link {{ $title == "Upcoming Events" ? "main__link--active" : "" }}">
