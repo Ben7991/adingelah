@@ -8,10 +8,14 @@
             <div class="col-12 col-md-6 col-lg-5">
                 <div class="border rounded bg-white shadow-sm p-3">
                     <h5 class="mt-0 mb-3">Add Category</h5>
-                    <form action="/admin/categories" method="post">
+                    <form action="{{ route("categories.store") }}" method="post">
+                        @csrf
                         <div class="form-group mb-4">
                             <label for="name" class="mb-1">Name</label>
                             <input type="text" name="name" id="name" class="form-control">
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <button class="btn btn-main px-4 rounded-pill">
                             <i class="bi bi-save"></i>&nbsp;Save

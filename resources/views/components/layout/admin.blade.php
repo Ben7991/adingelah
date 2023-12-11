@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset("assets/css/general.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/admin.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/data-table/datatables.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("assets/sweet_alert/sweetalert2.min.css")}}">
     @stack("styles")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Open+Sans:wght@300;400;600;800&display=swap">
     <script src="{{ asset("assets/bootstrap/js/popper.min.js") }}"></script>
@@ -97,7 +98,22 @@
     </main>
 
     <script src="{{ asset("assets/js/jquery.js") }}"></script>
+    <script src="{{ asset("assets/sweet_alert/sweetalert2.all.min.js") }}"></script>
+
     <script src="{{ asset("assets/data-table/datatables.min.js") }}"></script>
+    <script src="{{ asset("assets/js/global.js") }}"></script>
+
     @stack("scripts")
+
+    <script>
+        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$success))
+            displayOperationSuccessMessageAlert("{{ $message }}");
+        @endif
+
+        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$failed))
+            displayOperationFailedMessageAlert("{{ $message }}");
+        @endif
+    </script>
+
 </body>
 </html>

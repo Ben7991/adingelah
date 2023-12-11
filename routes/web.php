@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonationsController;
-use App\Http\Controllers\PostsController;
-use App\Http\Controllers\ProgramsController;
-use App\Http\Controllers\UpcomingEventsController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\UpcomingEventController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,19 +33,19 @@ Route::prefix('admin')->group(function () {
     Route::resource("donations", DonationsController::class)->only([
         "index", "show"
     ]);
-    Route::resource("categories", CategoriesController::class)->only([
+    Route::resource("categories", CategoryController::class)->only([
         "index", "store", "create", "edit", "update", "destroy"
     ]);
     Route::resource("users", UsersController::class)->only([
         "index", "store", "update", "destroy", "create"
     ]);
-    Route::resource("posts", PostsController::class)->only([
+    Route::resource("posts", PostController::class)->only([
         "index", "store", "update", "destroy", "create", "edit"
     ]);
-    Route::resource("events", UpcomingEventsController::class)->only([
+    Route::resource("events", UpcomingEventController::class)->only([
         "index", "create", "store", "edit", "update", "destroy"
     ]);
-    Route::resource("program-initiative", ProgramsController::class)->only([
+    Route::resource("program-initiative", ProgramController::class)->only([
         "index", "create", "store", "edit", "update", "destroy"
     ]);
 });
