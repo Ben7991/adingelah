@@ -31,7 +31,7 @@ class UpcomingEventController extends Controller
         {
             return redirect()
                 ->route("events.index")
-                ->with(SubmitOutcome::$failed, "Event not found");
+                ->with(SubmitOutcome::$FAILED, "Event not found");
         }
     }
 
@@ -63,13 +63,13 @@ class UpcomingEventController extends Controller
 
             return redirect()
                 ->route("events.index")
-                ->with(SubmitOutcome::$success, "new Event is created successfully");
+                ->with(SubmitOutcome::$SUCCESS, "new Event is created successfully");
         }
         catch (\Exception $e)
         {
             return redirect()
                 ->route("events.create")
-                ->with(SubmitOutcome::$failed, "Event creation failed, try again");
+                ->with(SubmitOutcome::$FAILED, "Event creation failed, try again");
         }
 
     }
@@ -111,14 +111,14 @@ class UpcomingEventController extends Controller
 
             return redirect()
                 ->route("events.index")
-                ->with(SubmitOutcome::$success, "Event has been updated successfully");
+                ->with(SubmitOutcome::$SUCCESS, "Event has been updated successfully");
         }
         catch(\Exception $e)
         {
 
             return redirect()
                 ->route("events.index")
-                ->with(SubmitOutcome::$failed, "Event update failed, try again");
+                ->with(SubmitOutcome::$FAILED, "Event update failed, try again");
         }
 
     }
@@ -134,13 +134,13 @@ class UpcomingEventController extends Controller
 
             return redirect()
                 ->route("events.index")
-                ->with(SubmitOutcome::$success, "Event has been deleted successfully");
+                ->with(SubmitOutcome::$SUCCESS, "Event has been deleted successfully");
         }
         catch(\Exception $e)
         {
             return redirect()
                 ->route("events.index")
-                ->with(SubmitOutcome::$failed, "Event deletion failed, try again");
+                ->with(SubmitOutcome::$FAILED, "Event deletion failed, try again");
         }
     }
 

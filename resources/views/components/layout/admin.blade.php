@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,9 +85,9 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <form action="/sign-out" method="post">
+                            <form action="{{ route("sign-out") }}" method="post">
                                 @csrf
-                                <button type="button" class="btn btn-success">Confirm</button>
+                                <button class="btn btn-success">Confirm</button>
                             </form>
                         </div>
                     </div>
@@ -106,11 +106,11 @@
     @stack("scripts")
 
     <script>
-        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$success))
+        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$SUCCESS))
             displayOperationSuccessMessageAlert("{{ $message }}");
         @endif
 
-        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$failed))
+        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$FAILED))
             displayOperationFailedMessageAlert("{{ $message }}");
         @endif
     </script>

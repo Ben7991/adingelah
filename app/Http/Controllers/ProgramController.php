@@ -32,7 +32,7 @@ class ProgramController extends Controller
         {
             return redirect()
                 ->route("program-initiative.index")
-                ->with(SubmitOutcome::$failed, "Program not found");
+                ->with(SubmitOutcome::$FAILED, "Program not found");
         }
     }
 
@@ -58,13 +58,13 @@ class ProgramController extends Controller
 
             return redirect()
                 ->route("program-initiative.index")
-                ->with(SubmitOutcome::$success, "New program added successfully");
+                ->with(SubmitOutcome::$SUCCESS, "New program added successfully");
         }
         catch (\Exception $e)
         {
             return redirect()
                 ->route("program-initiative.index")
-                ->with(SubmitOutcome::$failed, "Failed to add program, please try again later");
+                ->with(SubmitOutcome::$FAILED, "Failed to add program, please try again later");
         }
     }
 
@@ -91,13 +91,13 @@ class ProgramController extends Controller
 
             return redirect()
                 ->route("program-initiative.index")
-                ->with(SubmitOutcome::$success, "Program update was successfully");
+                ->with(SubmitOutcome::$SUCCESS, "Program update was successfully");
         }
         catch (\Exception $e)
         {
             return redirect()
                 ->route("program-initiative.index")
-                ->with(SubmitOutcome::$failed, "Failed to update program, please try again later");
+                ->with(SubmitOutcome::$FAILED, "Failed to update program, please try again later");
         }
     }
 
@@ -111,13 +111,13 @@ class ProgramController extends Controller
 
             return redirect()
                 ->route("program-initiative.index")
-                ->with(SubmitOutcome::$success, "Program deleted was successful");
+                ->with(SubmitOutcome::$SUCCESS, "Program deleted was successful");
         }
         catch (\Exception $e)
         {
             return redirect()
                 ->route("program-initiative.index")
-                ->with(SubmitOutcome::$failed, "failed to delete program. try again later");
+                ->with(SubmitOutcome::$FAILED, "failed to delete program. try again later");
         }
     }
 }

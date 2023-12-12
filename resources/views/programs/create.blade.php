@@ -22,7 +22,7 @@
                             @enderror
                         </div>
                         <div class="form-group mb-3">
-                            <label for="days" class="mb-1">Days (<small>click to select or remove</small>)</label>
+                            <label for="days" class="mb-1">Days (<small style="color: #1b998b">click to select or remove</small>)</label>
                             <select id="days" class="form-control" multiple>
                                 <option value="Monday">Monday</option>
                                 <option value="Tuesday">Tuesday</option>

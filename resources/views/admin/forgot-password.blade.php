@@ -10,10 +10,14 @@
         </nav>
     </div>
     <h5 class="my-4 text-center">Sign-In Admin</h5>
-    <form action="" method="POST">
+    <form action="{{ route("reset-password") }}" method="POST">
+        @csrf
         <div class="form-group mb-4">
             <label for="email-address" class="mb-1">Email Address</label>
             <input type="email" name="email" id="email-address" class="form-control">
+            @error("email")
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
         </div>
         <div class="w-100 d-flex align-items-center justify-content-between mb-4">
             <button class="btn btn-success rounded-pill px-4 shadow" type="submit">

@@ -49,7 +49,7 @@ class CategoryController extends Controller
         {
             return redirect()
                 ->route("categories.index")
-                ->with(SubmitOutcome::$failed, "category not found");
+                ->with(SubmitOutcome::$FAILED, "category not found");
         }
     }
 
@@ -67,7 +67,7 @@ class CategoryController extends Controller
 
         return redirect()
             ->route("categories.index")
-            ->with(SubmitOutcome::$success, "Record update was successfully");
+            ->with(SubmitOutcome::$SUCCESS, "Record update was successfully");
 
     }
 
@@ -82,12 +82,12 @@ class CategoryController extends Controller
 
             return redirect()
                 ->route("categories.index")
-                ->with(SubmitOutcome::$success, "Record deleted successfully");
+                ->with(SubmitOutcome::$SUCCESS, "Record deleted successfully");
         }
         catch(\Exception $e){
             return redirect()
                 ->route("categories.index")
-                ->with(SubmitOutcome::$failed, "Record deletion failed!");
+                ->with(SubmitOutcome::$FAILED, "Record deletion failed!");
         }
 
     }

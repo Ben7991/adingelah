@@ -33,7 +33,7 @@ class PostController extends Controller
         {
             return redirect()
                 ->route("posts.index")
-                ->with(SubmitOutcome::$failed, "Post not found");
+                ->with(SubmitOutcome::$FAILED, "Post not found");
         }
     }
 
@@ -63,13 +63,13 @@ class PostController extends Controller
 
             return redirect()
                 ->route("posts.index")
-                ->with(SubmitOutcome::$success, "new post is created successfully");
+                ->with(SubmitOutcome::$SUCCESS, "new post is created successfully");
         }
         catch (\Exception $e)
         {
             return redirect()
                 ->route("posts.create")
-                ->with(SubmitOutcome::$failed, "post creation failed, try again");
+                ->with(SubmitOutcome::$FAILED, "post creation failed, try again");
         }
 
 
@@ -91,7 +91,6 @@ class PostController extends Controller
             $request->validate(["banner" => "required|mimes:jpg,png,jpeg,gif,svg|max:2048"]);
         }
 
-
         try
         {
             $bannerName = ($request->banner != null) ? $this->generateFileName()  : $post->banner;
@@ -109,14 +108,14 @@ class PostController extends Controller
 
             return redirect()
                 ->route("posts.index")
-                ->with(SubmitOutcome::$success, "Post has been updated successfully");
+                ->with(SubmitOutcome::$SUCCESS, "Post has been updated successfully");
         }
         catch(\Exception $e)
         {
 
             return redirect()
                 ->route("posts.index")
-                ->with(SubmitOutcome::$failed, "Post update failed, try again");
+                ->with(SubmitOutcome::$FAILED, "Post update failed, try again");
         }
     }
 
@@ -131,13 +130,13 @@ class PostController extends Controller
 
             return redirect()
                 ->route("posts.index")
-                ->with(SubmitOutcome::$success, "Post has been deleted successfully");
+                ->with(SubmitOutcome::$SUCCESS, "Post has been deleted successfully");
         }
         catch(\Exception $e)
         {
             return redirect()
                 ->route("posts.index")
-                ->with(SubmitOutcome::$failed, "Post deletion failed, try again");
+                ->with(SubmitOutcome::$FAILED, "Post deletion failed, try again");
         }
     }
 

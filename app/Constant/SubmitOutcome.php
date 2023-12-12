@@ -6,6 +6,6 @@ namespace App\Constant;
 
 class SubmitOutcome
 {
-    public static string $success = "success";
-    public static string $failed = "failed";
+    public static string $SUCCESS = "success";
+    public static string $FAILED = "failed";
 }
