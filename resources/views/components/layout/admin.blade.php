@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset("assets/css/general.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/admin.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/data-table/datatables.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("assets/sweet_alert/sweetalert2.min.css")}}">
     @stack("styles")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Open+Sans:wght@300;400;600;800&display=swap">
     <script src="{{ asset("assets/bootstrap/js/popper.min.js") }}"></script>
@@ -84,9 +85,9 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <form action="/sign-out" method="post">
+                            <form action="{{ route("sign-out") }}" method="post">
                                 @csrf
-                                <button type="button" class="btn btn-success">Confirm</button>
+                                <button class="btn btn-success">Confirm</button>
                             </form>
                         </div>
                     </div>
@@ -97,7 +98,22 @@
     </main>
 
     <script src="{{ asset("assets/js/jquery.js") }}"></script>
+    <script src="{{ asset("assets/sweet_alert/sweetalert2.all.min.js") }}"></script>
+
     <script src="{{ asset("assets/data-table/datatables.min.js") }}"></script>
+    <script src="{{ asset("assets/js/global.js") }}"></script>
+
     @stack("scripts")
+
+    <script>
+        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$SUCCESS))
+            displayOperationSuccessMessageAlert("{{ $message }}");
+        @endif
+
+        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$FAILED))
+            displayOperationFailedMessageAlert("{{ $message }}");
+        @endif
+    </script>
+
 </body>
 </html>

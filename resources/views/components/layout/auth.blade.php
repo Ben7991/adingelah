@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset("assets/bootstrap-icons/font/bootstrap-icons.min.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/general.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/auth.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/sweet_alert/sweetalert2.min.css") }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Open+Sans:wght@300;400;600;800&display=swap">
 </head>
 <body>
@@ -35,5 +36,21 @@
     <script src="{{ asset("assets/js/jquery.js") }}"></script>
     <script src="{{ asset("assets/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
     <script src="{{ asset("assets/bootstrap/js/bootstrap.min.js") }}"></script>
+    <script src="{{ asset("assets/sweet_alert/sweetalert2.all.min.js") }}"></script>
+    <script src="{{ asset("assets/js/global.js") }}"></script>
+
+
+    @stack("scripts")
+    {{-- show error messges --}}
+    <script>
+        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$FAILED))
+            displayOperationFailedMessageAlert("{{ $message }}");
+        @endif
+
+        @if($message = \Illuminate\Support\Facades\Session::get(\App\Constant\SubmitOutcome::$SUCCESS))
+            displayOperationSuccessMessageAlert("{{ $message }}");
+        @endif
+    </script>
+
 </body>
 </html>
