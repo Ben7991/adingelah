@@ -16,9 +16,15 @@
                         <div class="form-group mb-4">
                             <label for="status" class="mb-1">Status</label>
                             <select name="status" id="status" class="form-select">
+<<<<<<< Updated upstream
                                 <option value="no-value">Select your preferred value</option>
                                 <option value="visible">Visible</option>
                                 <option value="hidden">Hidden</option>
+=======
+                                <option value="">Select your preferred value</option>
+                                <option value="visible" {{ $category->status === "visible" ? "selected" : "" }}>Visible</option>
+                                <option value="hidden" {{ $category->status === "hidden" ? "selected" : "" }}>Hidden</option>
+>>>>>>> Stashed changes
                             </select>
                         </div>
                         <button class="btn btn-main px-4 rounded-pill">

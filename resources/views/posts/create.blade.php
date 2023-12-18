@@ -23,6 +23,23 @@
                             <input type="text" name="title" id="title" class="form-control">
                         </div>
                         <div class="form-group mb-3">
+                            <label for="category_id" class="mb-1">Category</label>
+                            @if(count($categories) === 0)
+                                <p class="m-0">No category found, click here to add categories</p>
+                            @else
+                                <select name="category_id" id="category_id" class="form-select">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">
+                                            {{ $category->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('category_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            @endif
+                        </div>
+                        <div class="form-group mb-3">
                             <label for="banner" class="mb-1">Banner</label>
                             <input type="file" name="banner" id="banner" class="form-control">
                         </div>
