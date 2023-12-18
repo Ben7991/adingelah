@@ -13,6 +13,7 @@
 </head>
 <body>
     {{-- Navigation --}}
+    <div class="back-drop"></div>
     <nav class="navigation shadow-sm py-3">
         <div class="container">
             <a href="/" class="navigation__brand">
@@ -23,7 +24,7 @@
                 <span class="navigation__bar"></span>
                 <span class="navigation__bar"></span>
             </button>
-            <div class="navigation__collapse navigation__collapse--show">
+            <div class="navigation__collapse">
                 <ul class="navigation__list">
                     <li class="navigation__item">
                         <a href="/" class="navigation__link navigation__link-active">Home</a>

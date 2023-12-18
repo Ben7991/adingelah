@@ -41,8 +41,6 @@ h6 {
     color: var(--bs-white) !important;
 }
 
-<<<<<<< Updated upstream
-=======
 .btn-delete {
     background: rgba(175, 0, 0, 0.8) !important;
 }
@@ -51,7 +49,6 @@ h6 {
     background: darkred !important;
 }
 
->>>>>>> Stashed changes
 .btn-main:hover {
     background-color: var(--color-emerald-green-hover);
 }
@@ -77,8 +74,6 @@ h6 {
 .image-holder {
     border: 1px dashed var(--bs-gray-500);
 }
-<<<<<<< Updated upstream
-=======
 
 .image-holder__img {
     width: 100%;
@@ -127,4 +122,3 @@ table td:last-child {
     border: none;
     outline: none;
 }
->>>>>>> Stashed changes
