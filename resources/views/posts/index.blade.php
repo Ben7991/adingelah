@@ -43,7 +43,7 @@
                                     <td>
                                         <img class="post-img__small" src="{{ asset(\App\Constant\ImagePath::$post . $post->banner) }}" alt="image">
                                     </td>
-                                    <td>{{ Str::length($post->title) > 10 ? substr($post->title, 10)."..." : $post->title}}</td>
+                                    <td>{{ Str::length($post->title) > 20 ? substr($post->title, 0, 20)."..." : $post->title }}</td>
                                     <td>{{ $post->category->name}}</td>
                                     <td class="d-flex align-items-center">
                                         <a class="action-btn text-secondary" href="{{ route("posts.edit", $post->id) }}"
