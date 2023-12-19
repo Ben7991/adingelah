@@ -53,23 +53,23 @@
     <section class="py-5 bg-main-o">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-4 mb-3 mb-md-0">
+                <div class="col-12 col-md-4 mb-4 mb-md-0">
                     <i class="bi bi-calendar text-main fs-3"></i>
-                    <h5 class="mb-3 mt-4">Events</h5>
+                    <h5 class="mb-2 mb-md-3  mt-2 mt-md-4">Events</h5>
                     <p class="m-0">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, similique.
                     </p>
                 </div>
-                <div class="col-12 col-lg-4 mb-3 mb-md-0">
+                <div class="col-12 col-md-4 mb-4 mb-md-0">
                     <i class="bi bi-arrow-clockwise text-tertiary fs-3"></i>
-                    <h5 class="mb-3 mt-4">Programs</h5>
+                    <h5 class="mb-2 mb-md-3 mt-2 mt-md-4">Programs</h5>
                     <p class="m-0">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, similique.
                     </p>
                 </div>
-                <div class="col-12 col-lg-4 mb-3 mb-md-0">
+                <div class="col-12 col-md-4 mb-4 mb-md-0">
                     <i class="bi bi-gift text-main fs-3"></i>
-                    <h5 class="mb-3 mt-4">Donations</h5>
+                    <h5 class="mb-2 mb-md-3 mt-2 mt-md-4">Donations</h5>
                     <p class="m-0">
                         Through your gifts, in the form of cash or others can help change the lives of many.
                     </p>

@@ -59,7 +59,81 @@
 
     {{-- Footer --}}
     <footer class="footer">
-
+        <div class="footer__top pt-3 pt-md-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-2 col-xl-2 mb-3 mb-xl-0">
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="/" class="footer__link">Home</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="/about-us" class="footer__link">About Us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="/gallery" class="footer__link">Gallery</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="/gallery" class="footer__link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-2 mb-3 mb-xl-0">
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="/upcoming-events" class="footer__link">Upcoming Events</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="/programs-initiative" class="footer__link">Progams & Initiative</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="/donations" class="footer__link">Donations</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-3 mb-3 mb-xl-0">
+                        <h6 class="mb-3">Call Us</h6>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="tel: +233555855363" class="footer__link">(+233) 55 585 5363</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="tel: +233206204007" class="footer__link">(+233) 20 620 4007</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-3 mb-3 mb-xl-0">
+                        <h6 class="mb-3">Send us a mail</h6>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="mailto: info@adingelahfoundation.ngo" class="footer__link">info@adingelahfoundation.ngo</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-2 mb-3 mb-xl-0">
+                        <h6 class="mb-3">Socials</h6>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a href="#" class="footer__social footer__social--facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="footer__social footer__social--instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="footer__social footer__social--twitter">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="footer__bottom pt-2 pb-4">
+            <p class="text-center m-0">
+                <span class="footer__copy-right">&copy; Adingelah Foundation 2023 | Powered By</span>
+                <a href="#" class="footer__link">Bernard Teye</a>
+            </p>
+        </div>
     </footer>
 
     <script src="{{ asset("assets/bootstrap/js/popper.min.js") }}"></script>
