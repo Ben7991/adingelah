@@ -22,8 +22,8 @@
                             <label for="status" class="mb-1">Status</label>
                             <select name="status" id="status" class="form-select">
                                 <option value="">Select your preferred value</option>
-                                <option value="visible">Visible</option>
-                                <option value="hidden">Hidden</option>
+                                <option value="visible" {{ $category->status === "visible" ? "selected" : "" }}>Visible</option>
+                                <option value="hidden" {{ $category->status === "hidden" ? "selected" : "" }}>Hidden</option>
                             </select>
                             @error('status')
                                 <span class="text-danger">{{ $message }}</span>

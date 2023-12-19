@@ -4,30 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Constant\ImagePath;
 use App\Constant\SubmitOutcome;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index() {
-        $posts = Post::get();
-        return view("posts.index", ["posts" => $posts]);
+        return view("posts.index", [
+            "posts" => Post::all()
+        ]);
     }
-
-
 
     public function create() {
-        return view("posts.create");
+        return view("posts.create", [
+            "categories" => Category::all()
+        ]);
     }
-
-
-
 
     public function edit($id) {
         try
         {
-            $post = Post::findOrFail($id);
-            return view("posts.edit", ["post" => $post]);
+            return view("posts.edit", [
+                "post" => Post::findOrFail($id),
+                "categories" => Category::all()
+            ]);
         }
         catch (\Exception $e)
         {
@@ -37,14 +38,12 @@ class PostController extends Controller
         }
     }
 
-
-
-
     public function store(Request $request){
         $request->validate([
            "title" => "required|min:3",
            "banner" => "required|mimes:jpg,png,jpeg,gif,svg|max:2048",
-           "description" => "required|min:10"
+           "description" => "required|min:10",
+           "category_id" => "required"
         ]);
 
         try
@@ -55,7 +54,7 @@ class PostController extends Controller
             $post->title = $request->title;
             $post->banner = $bannerName;
             $post->description = $request->description;
-
+            $post->category_id = $request->category_id;
             $post->save();
 
             // save the image to the public folder
@@ -74,9 +73,6 @@ class PostController extends Controller
 
 
     }
-
-
-
 
     public function update(Request $request, Post $post){
         $request->validate([
@@ -118,9 +114,6 @@ class PostController extends Controller
                 ->with(SubmitOutcome::$FAILED, "Post update failed, try again");
         }
     }
-
-
-
 
     public  function destroy($id){
         try

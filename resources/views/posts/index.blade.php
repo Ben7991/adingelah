@@ -31,6 +31,7 @@
                                 <th>Date Created</th>
                                 <th>Banner</th>
                                 <th>Title</th>
+                                <th>Category</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -42,14 +43,19 @@
                                     <td>
                                         <img class="post-img__small" src="{{ asset(\App\Constant\ImagePath::$post . $post->banner) }}" alt="image">
                                     </td>
-                                    <td>{{ $post->title }}</td>
+                                    <td>{{ Str::length($post->title) > 10 ? substr($post->title, 10)."..." : $post->title}}</td>
+                                    <td>{{ $post->category->name}}</td>
                                     <td class="d-flex align-items-center">
-                                        <a class="btn btn-main px-4 rounded-pill text-decoration-none text-white" href="{{ route("posts.edit", $post->id) }}">Edit</a>
-
+                                        <a class="action-btn text-secondary" href="{{ route("posts.edit", $post->id) }}"
+                                            title="Edit">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
                                         <form method="post" action="{{ route("posts.destroy", $post->id) }}" onsubmit="formDeleteConfirmationModal(event)">
                                             @method("delete")
                                             @csrf
-                                            <button class="btn btn-main px-4 rounded-pill btn-delete">Delete</button>
+                                            <button class="action-btn text-danger" title="Delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>

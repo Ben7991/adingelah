@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->string("banner");
+            $table->foreignId("category_id")->constrained("categories");
             $table->text("description");
             $table->timestamps();
         });
