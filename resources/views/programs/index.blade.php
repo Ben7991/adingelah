@@ -42,14 +42,18 @@
                                     <td>{{ $program->id }}</td>
                                     <td class="days-td">{{ $program->days }}</td>
                                     <td>{{ date('h:i A', strtotime($program->time)) }}</td>
-                                    <td>{{ $program->title }}</td>
+                                    <td>{{ Str::length($program->title) > 20 ? substr($program->title, 0, 20)."..." : $program->title }}</td>
                                     <td class="d-flex align-items-center">
-                                        <a class="btn btn-main px-4 rounded-pill text-decoration-none text-white" href="{{ route("program-initiative.edit", $program->id) }}">Edit</a>
-
+                                        <a class="action-btn text-secondary" href="{{ route("program-initiative.edit", $program->id) }}"
+                                            title='Edit'>
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
                                         <form method="post" action="{{ route("program-initiative.destroy", $program->id) }}" onsubmit="formDeleteConfirmationModal(event)">
                                             @method("delete")
                                             @csrf
-                                            <button class="btn btn-main px-4 rounded-pill btn-delete">Delete</button>
+                                            <button class="action-btn text-danger" title='Delete'>
+                                                <i class="bi bi-trash"></i>
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>

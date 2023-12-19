@@ -46,7 +46,9 @@
                                         <form method="post" action="{{ route("users.destroy", $user->id) }}" onsubmit="formDeleteConfirmationModal(event)">
                                             @csrf
                                             @method("delete")
-                                            <button class="btn btn-main px-4 rounded-pill btn-delete">Delete</button>
+                                            <button class="action-btn text-danger" title='Delete'>
+                                                <i class="bi bi-trash"></i>
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>
