@@ -7,6 +7,7 @@
     <title>Adingelah Foundation</title>
     <link rel="shortcut icon" href="{{ asset("assets/img/logo-big.png") }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset("assets/bootstrap/css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{ asset("assets/css/general.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/home.css") }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Open+Sans:wght@300;400;600;800&display=swap">
@@ -14,7 +15,7 @@
 <body>
     {{-- Navigation --}}
     <div class="back-drop"></div>
-    <nav class="navigation shadow-sm py-3">
+    <nav class="navigation py-3">
         <div class="container">
             <a href="/" class="navigation__brand">
                 <img src="{{ asset("assets/img/logo-big.png") }}" alt="Adingelah Foundation Logo" class="navigation__brand-logo">
@@ -52,7 +53,9 @@
         </div>
     </nav>
 
-    {{ $slot }}
+    <main>
+        {{ $slot }}
+    </main>
 
     {{-- Footer --}}
     <footer class="footer">
