@@ -55,7 +55,7 @@
                 </div>
                 <div class="dropdown">
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        BT
+                        <i class="bi bi-person"></i>
                     </button>
                     <ul class="dropdown-menu">
                         <li>

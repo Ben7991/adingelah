@@ -7,18 +7,16 @@ use App\Mail\ResetUserPasswordMail;
 use App\Mail\SendUserPasswordMail;
 use App\Models\User;
 use App\Services\PasswordGenerator;
-use Cassandra\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Testing\Fluent\Concerns\Has;
 
 
 class UsersController extends Controller
 {
     public function index() {
-        $users = User::all()->except(Auth::id());
+        $users = User::all();
         return view("users.index", ["users" => $users]);
     }
 

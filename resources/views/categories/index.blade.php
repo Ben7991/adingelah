@@ -73,15 +73,6 @@
                                                 <i class="bi bi-check-lg text-success"></i>
                                             @endif
                                         </button>
-                                <td>{{ $category->status }}</td>
-                                <td class="d-flex align-items-center">
-                                    <a class="btn btn-main px-4 rounded-pill text-decoration-none text-white" href="{{ route("categories.edit", $category->id) }}">Edit</a>
-
-                                    <form method="post" action="{{ route("categories.destroy", $category->id) }}" onsubmit="formDeleteConfirmationModal(event)">
-                                        @method("delete")
-                                        @csrf
-
-                                        <button class="btn btn-main px-4 rounded-pill btn-delete">Delete</button>
                                     </form>
                                 </td>
                             </tr>

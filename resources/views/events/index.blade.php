@@ -36,26 +36,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @if(count($events))
-                            @foreach($events as $event)
-                                <tr>
-                                    <td>{{ $event->event_date }}</td>
-                                    <td><img class="post-img__small" src="{{ asset(\App\Constant\ImagePath::$events . $event->flier) }}" alt="image"></td>
-                                    <td>{{ $event->title }}</td>
-                                    <td>{{ $event->venue }}</td>
+                            @if(count($events) > 0)
+                                @foreach($events as $event)
+                                    <tr>
+                                        <td>{{ $event->event_date }}</td>
+                                        <td><img class="post-img__small" src="{{ asset(\App\Constant\ImagePath::$events . $event->flier) }}" alt="image"></td>
+                                        <td>{{ $event->title }}</td>
+                                        <td>{{ $event->venue }}</td>
 
-                                    <td class="d-flex align-items-center">
-                                        <a class="btn btn-main px-4 rounded-pill text-decoration-none text-white" href="{{ route("events.edit", $event->id) }}">Edit</a>
+                                        <td class="d-flex align-items-center">
+                                            <a class="action-btn text-secondary" href="{{ route("events.edit", $event->id) }}" title='Edit'>
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
 
-                                        <form method="post" action="{{ route("events.destroy", $event->id) }}" onsubmit="formDeleteConfirmationModal(event)">
-                                            @method("delete")
-                                            @csrf
-                                            <button class="btn btn-main px-4 rounded-pill btn-delete">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        @endif
+                                            <form method="post" action="{{ route("events.destroy", $event->id) }}" onsubmit="formDeleteConfirmationModal(event)">
+                                                @method("delete")
+                                                @csrf
+                                                <button class="action-btn text-danger" title="Delete">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
