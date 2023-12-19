@@ -8,7 +8,7 @@
                     <i class="bi bi-calendar-event fs-3 text-main"></i>
                     <div class="text-end">
                         <p class="m-0 mb-1">All Events</p>
-                        <h3 class="m-0 text-main">20</h3>
+                        <h3 class="m-0 text-main">{{ count($events) }}</h3>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
         <div class="card border shadow-sm">
             <div class="card-header bg-white d-flex align-items-center justify-content-between py-3 border-bottom">
                 <h5 class="m-0">Events</h5>
-                <a href="/admin/events/create" class="btn btn-main px-3 rounded-pill">
+                <a href="{{ route("events.create") }}" class="btn btn-main px-3 rounded-pill">
                     <i class="bi bi-plus"></i>&nbsp;Add Event
                 </a>
             </div>
@@ -35,7 +35,28 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                        @if(count($events))
+                            @foreach($events as $event)
+                                <tr>
+                                    <td>{{ $event->event_date }}</td>
+                                    <td><img class="post-img__small" src="{{ asset(\App\Constant\ImagePath::$events . $event->flier) }}" alt="image"></td>
+                                    <td>{{ $event->title }}</td>
+                                    <td>{{ $event->venue }}</td>
+
+                                    <td class="d-flex align-items-center">
+                                        <a class="btn btn-main px-4 rounded-pill text-decoration-none text-white" href="{{ route("events.edit", $event->id) }}">Edit</a>
+
+                                        <form method="post" action="{{ route("events.destroy", $event->id) }}" onsubmit="formDeleteConfirmationModal(event)">
+                                            @method("delete")
+                                            @csrf
+                                            <button class="btn btn-main px-4 rounded-pill btn-delete">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
+                        </tbody>
                     </table>
                 </div>
             </div>

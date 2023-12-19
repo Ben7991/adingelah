@@ -55,7 +55,6 @@ class PostController extends Controller
             $post->banner = $bannerName;
             $post->description = $request->description;
             $post->category_id = $request->category_id;
-
             $post->save();
 
             // save the image to the public folder
@@ -69,7 +68,7 @@ class PostController extends Controller
         {
             return redirect()
                 ->route("posts.create")
-                ->with(SubmitOutcome::$FAILED, $e->getMessage());
+                ->with(SubmitOutcome::$FAILED, "post creation failed, try again");
         }
 
 

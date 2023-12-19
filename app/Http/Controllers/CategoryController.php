@@ -80,7 +80,6 @@ class CategoryController extends Controller
         try
         {
             $category = Category::findOrFail($id);
-
             if ($category->status === "visible")
                 $category->status = "hidden";
             else
@@ -96,6 +95,7 @@ class CategoryController extends Controller
             return redirect()
                 ->route("categories.index")
                 ->with(SubmitOutcome::$FAILED, "Category not found!");
+
         }
 
     }
