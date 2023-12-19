@@ -1,4 +1,6 @@
 <x-layout.home>
+    <x-slot name="page">Home</x-slot>
+
     <section class="hero">
         <div class="hero__container">
             <div class="hero__content">

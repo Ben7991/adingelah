@@ -28,25 +28,28 @@
             <div class="navigation__collapse">
                 <ul class="navigation__list">
                     <li class="navigation__item">
-                        <a href="/" class="navigation__link navigation__link-active">Home</a>
+                        <a href="/" class="navigation__link {{$page == 'Home' ? 'navigation__link-active' : ''}}">Home</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="/about-us" class="navigation__link">About Us</a>
+                        <a href="/about-us" class="navigation__link {{$page == 'About' ? 'navigation__link-active' : ''}}">About Us</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="/gallery" class="navigation__link">Gallery</a>
+                        <a href="/gallery" class="navigation__link {{$page == 'Gallery' ? 'navigation__link-active' : ''}}">Gallery</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="/upcoming-events" class="navigation__link">Upcoming Events</a>
+                        <a href="/upcoming-events" class="navigation__link {{$page == 'Event' ? 'navigation__link-active' : ''}}">Upcoming Events</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="/programs-initiatives" class="navigation__link">Programs & Initiative</a>
+                        <a href="/programs-initiative" class="navigation__link {{$page == 'Program' ? 'navigation__link-active' : ''}}">Programs & Initiative</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="/donations" class="navigation__link">Donations</a>
+                        <a href="/donations" class="navigation__link {{$page == 'Donations' ? 'navigation__link-active' : ''}}">Donations</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="/contact-us" class="navigation__link">Contact Us</a>
+                        <a href="/blog" class="navigation__link {{$page == 'Blog' ? 'navigation__link-active' : ''}}">Blog</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="/contact-us" class="navigation__link {{$page == 'Contact' ? 'navigation__link-active' : ''}}">Contact Us</a>
                     </li>
                 </ul>
             </div>
