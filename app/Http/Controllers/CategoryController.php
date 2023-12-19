@@ -9,8 +9,11 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index() {
-        $categories = Category::get();
-        return view("categories.index", ["categories" => $categories]);
+        return view("categories.index", [
+            "total_categories" => Category::count(),
+            "categories" => Category::all(),
+            "hidden_categories" => Category::where("status", "hidden")->count()
+        ]);
     }
 
 
@@ -77,17 +80,22 @@ class CategoryController extends Controller
         try
         {
             $category = Category::findOrFail($id);
+            if ($category->status === "visible")
+                $category->status = "hidden";
+            else
+                $category->status = "visible";
 
-            $category->delete();
+            $category->save();
 
             return redirect()
                 ->route("categories.index")
-                ->with(SubmitOutcome::$SUCCESS, "Record deleted successfully");
+                ->with(SubmitOutcome::$SUCCESS, "Changed status successfully!");
         }
         catch(\Exception $e){
             return redirect()
                 ->route("categories.index")
-                ->with(SubmitOutcome::$FAILED, "Record deletion failed!");
+                ->with(SubmitOutcome::$FAILED, "Category not found!");
+
         }
 
     }
