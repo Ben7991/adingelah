@@ -25,7 +25,7 @@
         <img src="{{ asset("assets/img/banner-home.jpg") }}" alt="Hero image" class="hero__image">
     </section>
 
-    <section class="py-5 mt-5 mb-5 position-relative">
+    <section class="py-5 mt-5 mb-0 mb-md-5 position-relative">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-12 col-md-6 mb-4 mb-md-0 mt-4 mt-md-0">

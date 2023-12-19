@@ -1,7 +1,9 @@
 :root {
     --color-emerald-green: rgb(27, 153, 139);
+    --color-emerald-green-o: rgba(27, 153, 139, 0.1);
     --color-emerald-green-hover: rgb(17, 104, 94);
     --color-gold: rgb(212, 176, 56);
+    --color-gold-hover: rgb(163, 136, 46);
 
     --font-light: 300;
     --font-regular: 400;
@@ -30,6 +32,14 @@ h6 {
     color: var(--color-emerald-green);
 }
 
+.text-tertiary {
+    color: var(--color-gold);
+}
+
+.bg-main-o {
+    background-color: var(--color-emerald-green-o);
+}
+
 .bg-main,
 .btn-main,
 .btn-main:focus {
@@ -37,8 +47,19 @@ h6 {
 }
 
 .btn-main,
+.btn-tertiary,
+.btn-tertiary:focus,
 .btn-main:focus {
     color: var(--bs-white) !important;
+}
+
+.btn-tertiary {
+    background-color: var(--color-gold);
+}
+
+.btn-tertiary:hover,
+.btn-tertiary:focus {
+    background-color: var(--color-gold-hover);
 }
 
 .btn-delete {
