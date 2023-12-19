@@ -55,11 +55,11 @@
     background-color: var(--color-emerald-green);
     overflow: hidden;
     transition: width 0.5s ease;
+    z-index: 10;
 }
 
 .navigation__collapse--show {
     width: 70%;
-    z-index: 10;
     padding: 15px;
 }
 
@@ -87,6 +87,12 @@
 .navigation__link-active {
     background-color: var(--bs-white);
     color: var(--color-emerald-green) !important;
+}
+
+@media (min-width: 768px) {
+    .navigation__collapse--show {
+        width: 300px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -140,5 +146,114 @@
         background-color: var(--color-gold);
         width: 100%;
         height: 2px;
+    }
+}
+
+.hero {
+    position: relative;
+}
+
+.hero__container {
+    width: 100%;
+    height: 420px;
+    background: linear-gradient(
+        to bottom right,
+        var(--bs-white),
+        var(--color-emerald-green)
+    );
+    padding: 5px;
+}
+
+.hero__content {
+    width: 90%;
+    margin: 30px auto 0;
+}
+
+.hero__image {
+    width: 90%;
+    display: block;
+    margin: auto;
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero__icon {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hero__image {
+        width: 400px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero__image {
+        width: 450px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero__container {
+        width: 700px;
+        padding: 0;
+        height: 450px;
+        border-radius: 0 20px 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero__content {
+        width: 80%;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .hero__image {
+        width: 500px;
+        bottom: -130px;
+        transform: translateY(-50%);
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero__icon {
+        display: block;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero__icon--bottom {
+        right: 50px;
+        bottom: 50px;
+    }
+
+    .hero__icon--top {
+        right: 40%;
+        top: 30px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero__container {
+        width: 51%;
+        height: 500px;
+    }
+
+    .hero__image {
+        width: 600px;
+        bottom: -180px;
+    }
+
+    .hero__icon--bottom {
+        right: 100px;
     }
 }
